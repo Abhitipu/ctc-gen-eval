@@ -30,5 +30,5 @@ confirm CKPT_LINK
 confirm MODEL_NAME_PATH
 
 # DOWNLOAD MODEL CHECKPOINTS
-mkdir "checkpoints/$(dirname ${MODEL_NAME_PATH})"
+mkdir -p "checkpoints/$(dirname ${MODEL_NAME_PATH})"
 wget -q -c "${CKPT_LINK}" -O "checkpoints/${MODEL_NAME_PATH}"
