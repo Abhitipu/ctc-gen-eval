@@ -14,6 +14,7 @@ from sklearn.metrics import f1_score
 from data_utils.data_utils import TokenClassificationExample, \
     text_clean, get_words
 
+from .core import SMI
 
 INIT = 'roberta-large'
 MAX_LENGTH = 512
@@ -23,13 +24,32 @@ class DiscriminativeAligner(Aligner, LightningModule):
     def __init__(self, aggr_type):
         Aligner.__init__(self, aggr_type)
         LightningModule.__init__(self)
-        self._roberta = RobertaModel.from_pretrained('roberta-large')
-        self._roberta_tokenizer = RobertaTokenizerFast.from_pretrained(
-            'roberta-large')
+
+        checkpoint_path = "~/ctc-gen-eval/train/checkpoints/DMI-Base_Rob-10_Sep/model_best_auc.pth"
+        checkpoint = torch.load(checkpoint_path, map_location=self.device)
+        args = checkpoint['args']
+        epoch = checkpoint['epoch']
+        loss = checkpoint['loss']
+        auc = checkpoint['auc']
+        state_dict = checkpoint['model_state_dict']
+
+        self._roberta_tokenizer = RobertaTokenizerFast.from_pretrained('roberta-base')
+        self._tokenizer = AutoTokenizer.from_pretrained("roberta-base")
+        # self._roberta = RobertaModel.from_pretrained('roberta-base')
+        self._roberta = SMI(
+            vocab_size=len(self._tokenizer),
+            d_model=args['d_model'],
+            projection_size=args['projection'],
+            encoder_layers=args['encoder_layers'],
+            encoder_heads=args['encoder_heads'],
+            dim_feedforward=args.get('dim_feedforward', 2048), # 2048 is the default
+            roberta_init=True,
+            roberta_name="roberta-base"
+        )
+
 
         self._classifier = nn.Linear(
-            self._roberta.config.hidden_size, 2)
-        self._tokenizer = AutoTokenizer.from_pretrained("roberta-large")
+            self._roberta.d_model, 2)
 
         self._hparams = None
 

@@ -19,10 +19,9 @@ class HallucinationGenerator:
     def __init__(self, device):
         self._device = device
 
-        self._tokenizer = spacy.load('en')
-
-        self._parser = spacy.load('en')
-        self._parser.add_pipe(BeneparComponent('benepar_en3_large'))
+        self._tokenizer = spacy.load('en_core_web_sm')
+        self._parser = spacy.load('en_core_web_sm')
+        self._parser.add_pipe("benepar", config={"model": "benepar_en3_large"})
 
         self._infiller = BART(init='bart.large').to(self._device)
 

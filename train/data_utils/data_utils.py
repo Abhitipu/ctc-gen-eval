@@ -31,6 +31,9 @@ def get_dataloaders(dataset, batch_size, num_workers, shuffle, collate_fn):
 def text_clean(text, remove_linefeed=False):
     text = text.replace('“', '"').replace('”', '"').replace(
         '’', '\'').replace('‘', '\'')
+    
+    if text == "":
+        return text
 
     if remove_linefeed:
         text = cleantext.clean(text, lowercase=True, extra_spaces=True)
