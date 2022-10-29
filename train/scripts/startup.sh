@@ -14,12 +14,14 @@ python3 -m spacy download en_core_web_sm
 
 # The bleurt codebase
 cd models
+rm -rf bleurt
 git clone https://github.com/google-research/bleurt
 cd bleurt
 pip3 install .
 cd ..
 
 # Modified bert-score
+rm -rf bert_score
 git clone https://github.com/Abhitipu/bert_score
 cd bert_score
 pip3 install .
