@@ -26,8 +26,8 @@ pip3 install .
 cd ../../
 
 # For downloading DMI ckpts
-CKPT_LINK="https://iitkgpacin-my.sharepoint.com/:u:/g/personal/bishal_santra_iitkgp_ac_in/ERb1URQCFtlMmlRnPTsBFvEBkF_8uUezO007YLaSOW3jTg?e=Ts151M&download=1"
-MODEL_NAME_PATH="DMI-Base_Rob-10_Sep/model_best_auc.pth" 
+CKPT_LINK="https://iitkgpacin-my.sharepoint.com/:u:/g/personal/bishal_santra_iitkgp_ac_in/ERb1URQCFtlMmlRnPTsBFvEBkF_8uUezO007YLaSOW3jTg?e=Ts151M&download=1" \
+MODEL_NAME_PATH="DMI-Base_Rob-10_Sep/model_best_auc.pth" \
 bash preamble.sh
 
 # For the disc model to use dmi
