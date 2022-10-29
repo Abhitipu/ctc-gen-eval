@@ -1,12 +1,13 @@
 echo "Copy the constructed data folder from the main repo in the train folder"
 echo "Unzip to form constructed data"
 
-pip3 install -r requirements.txt
-python3 -m download_dependencies.py
+conda activate ctc_v1
+
+python3 download_dependencies.py
 
 # Unzip basic data
-unzip data/topical_chat.zip
-unzip data/yelp.zip
+# unzip data/topical_chat.zip
+# unzip data/yelp.zip
 
 # For spacy in hallucination
 python3 -m spacy download en_core_web_sm
