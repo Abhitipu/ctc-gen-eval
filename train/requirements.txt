@@ -2,7 +2,8 @@ distance
 nltk 
 transformers==4.10.2 
 pytorch_lightning==1.2.6 
-spacy datasets==1.18.4 
+spacy 
+datasets==1.18.4 
 summa 
 cleantext 
 benepar
