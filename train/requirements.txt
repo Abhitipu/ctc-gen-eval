@@ -1,10 +1,13 @@
-distance
-nltk
-transformers==4.3.3
-pytorch_lightning==1.2.6
-spacy==2.3.0
-datasets==1.5.0
-summa
-cleantext
+distance 
+nltk 
+transformers==4.10.2 
+pytorch_lightning==1.2.6 
+spacy datasets==1.18.4 
+summa 
+cleantext 
 benepar
-bert_score==0.3.9
+fire 
+torchtext==0.10.0 
+torchvision==0.10.0 
+torchaudio==0.9.0 
+fairseq
