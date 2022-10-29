@@ -3,6 +3,7 @@ echo "Unzip to form constructed data"
 
 conda activate ctc_v1
 
+pip3 install -r requirements.txt
 python3 download_dependencies.py
 
 # Unzip basic data
