@@ -24,8 +24,9 @@ class DiscriminativeAligner(Aligner, LightningModule):
     def __init__(self, aggr_type):
         Aligner.__init__(self, aggr_type)
         LightningModule.__init__(self)
-
-        checkpoint_path = "~/ctc-gen-eval/train/checkpoints/DMI-Base_Rob-10_Sep/model_best_auc.pth"
+        
+        HOME = os.getenv('HOME')
+        checkpoint_path = os.path.join(HOME, "ctc-gen-eval/train/checkpoints/DMI-Base_Rob-10_Sep/model_best_auc.pth")
         checkpoint = torch.load(checkpoint_path, map_location=self.device)
         args = checkpoint['args']
         epoch = checkpoint['epoch']
