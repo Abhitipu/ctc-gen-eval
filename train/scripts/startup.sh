@@ -6,8 +6,10 @@ conda activate ctc_v1
 python3 download_dependencies.py
 
 # Unzip basic data
-# unzip data/topical_chat.zip
-# unzip data/yelp.zip
+rm -rf data/topical_chat
+unzip data/topical_chat.zip
+rm -rf data/yelp
+unzip data/yelp.zip
 
 # For spacy in hallucination
 python3 -m spacy download en_core_web_sm
