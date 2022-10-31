@@ -18,7 +18,7 @@ python3 -m spacy download en_core_web_sm
 # The bleurt codebase
 cd models
 rm -rf bleurt
-git clone https://github.com/google-research/bleurt
+git clone https://github.com/Abhitipu/bleurt
 cd bleurt
 pip3 install .
 cd ..
