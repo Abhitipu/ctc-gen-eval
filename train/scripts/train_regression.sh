@@ -14,9 +14,9 @@ BERT_CKPT=/content/ctc-gen-eval/train/ckpt_new
 
 DATASET=persona_chat
 CONTEXT=fact_history
-MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
-TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
-DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/${DATASET}
+TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_train.jsonl
+DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
   -init_checkpoint=${BERT_CKPT}/roberta_base.ckpt \
   -bert_config_file=${BERT_CKPT}/bert_config.json \
@@ -24,7 +24,7 @@ python -m bleurt.finetune \
   -model_dir=${MY_BLEURT_CKPT} \
   -train_set=${TRAIN_PATH} \
   -dev_set=${DEV_PATH} \
-  -num_train_steps={STEPS} \
+  -num_train_steps=${STEPS} \
   -max_seq_length=512 \
   -batch_size=6 \
   -do_lower_case=true \
@@ -34,9 +34,9 @@ python -m bleurt.finetune \
 
 DATASET=persona_chat_fact
 CONTEXT=fact
-MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
-TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
-DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/${DATASET}
+TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_train.jsonl
+DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
   -init_checkpoint=${BERT_CKPT}/roberta_base.ckpt \
   -bert_config_file=${BERT_CKPT}/bert_config.json \
@@ -44,19 +44,18 @@ python -m bleurt.finetune \
   -model_dir=${MY_BLEURT_CKPT} \
   -train_set=${TRAIN_PATH} \
   -dev_set=${DEV_PATH} \
-  -num_train_steps={STEPS} \
+  -num_train_steps=${STEPS} \
   -max_seq_length=512 \
   -batch_size=6 \
   -do_lower_case=true \
   -export_metric=correlation \
   -keep_checkpoint_max=15
 
-
 DATASET=topical_chat
 CONTEXT=fact_history
-MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
-TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
-DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/${DATASET}
+TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_train.jsonl
+DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
   -init_checkpoint=${BERT_CKPT}/roberta_base.ckpt \
   -bert_config_file=${BERT_CKPT}/bert_config.json \
@@ -64,7 +63,7 @@ python -m bleurt.finetune \
   -model_dir=${MY_BLEURT_CKPT} \
   -train_set=${TRAIN_PATH} \
   -dev_set=${DEV_PATH} \
-  -num_train_steps={STEPS} \
+  -num_train_steps=${STEPS} \
   -max_seq_length=512 \
   -batch_size=6 \
   -do_lower_case=true \
@@ -74,9 +73,9 @@ python -m bleurt.finetune \
 
 DATASET=topical_chat_fact
 CONTEXT=fact
-MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
-TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
-DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/${DATASET}
+TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_train.jsonl
+DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/${DATASET}/${CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
   -init_checkpoint=${BERT_CKPT}/roberta_base.ckpt \
   -bert_config_file=${BERT_CKPT}/bert_config.json \
@@ -84,9 +83,10 @@ python -m bleurt.finetune \
   -model_dir=${MY_BLEURT_CKPT} \
   -train_set=${TRAIN_PATH} \
   -dev_set=${DEV_PATH} \
-  -num_train_steps={STEPS} \
+  -num_train_steps=${STEPS} \
   -max_seq_length=512 \
   -batch_size=6 \
   -do_lower_case=true \
   -export_metric=correlation \
   -keep_checkpoint_max=15
+
