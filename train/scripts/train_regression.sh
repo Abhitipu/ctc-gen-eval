@@ -14,7 +14,7 @@ BERT_CKPT=/content/ctc-gen-eval/train/ckpt_new
 
 DATASET=persona_chat
 CONTEXT=fact_history
-MY_BLEURT_CKPT=/content/ctc-gen-eval/train/bleurt_ckpt/{DATASET}
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
 TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
 DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
@@ -34,7 +34,7 @@ python -m bleurt.finetune \
 
 DATASET=persona_chat_fact
 CONTEXT=fact
-MY_BLEURT_CKPT=/content/ctc-gen-eval/train/bleurt_ckpt/{DATASET}
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
 TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
 DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
@@ -54,7 +54,7 @@ python -m bleurt.finetune \
 
 DATASET=topical_chat
 CONTEXT=fact_history
-MY_BLEURT_CKPT=/content/ctc-gen-eval/train/bleurt_ckpt/{DATASET}
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
 TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
 DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
@@ -74,7 +74,7 @@ python -m bleurt.finetune \
 
 DATASET=topical_chat_fact
 CONTEXT=fact
-MY_BLEURT_CKPT=/content/ctc-gen-eval/train/bleurt_ckpt/{DATASET}
+MY_BLEURT_CKPT=/content/drive/MyDrive/bleurt_ckpt/{DATASET}
 TRAIN_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_train.jsonl
 DEV_PATH=/content/ctc-gen-eval/train/bleurt_data/{DATASET}/{CONTEXT}_sum_remove_stopwords_dev.jsonl
 python -m bleurt.finetune \
