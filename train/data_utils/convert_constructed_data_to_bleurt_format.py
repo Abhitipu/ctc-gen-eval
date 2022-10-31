@@ -4,7 +4,7 @@ import json
 import math
 import numpy as np
 from tqdm import tqdm
-from data_utils.data_utils import get_context, get_discriminative_token_labels
+from data_utils import get_context, get_discriminative_token_labels
 
 from nltk.corpus import stopwords
 en_stopwords = stopwords.words('english')
