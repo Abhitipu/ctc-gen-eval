@@ -3,7 +3,7 @@ from glob import glob
 
 from torch.utils.data import Dataset
 
-from data_utils.data_utils import text_clean, get_discriminative_token_labels,\
+from data_utils import text_clean, get_discriminative_token_labels,\
     get_context, TokenClassificationExample
 
 
